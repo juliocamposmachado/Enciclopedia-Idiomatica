@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-night-950 text-slate-200 antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+  }
+  html:not(.dark) body {
+    @apply bg-slate-100 text-slate-800;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-md;
+  }
+  html:not(.dark) .panel {
+    @apply border-slate-300/60 bg-white/70 shadow-sm;
+  }
+  .panel-hover {
+    @apply transition-all duration-300 hover:border-cyan-400/30 hover:bg-white/[0.05] hover:shadow-glow;
+  }
+  .stat-value {
+    @apply font-mono text-2xl font-semibold text-cyan-300;
+  }
+  html:not(.dark) .stat-value {
+    @apply text-cyan-700;
+  }
+  .label {
+    @apply text-[11px] font-medium uppercase tracking-widest text-slate-400;
+  }
+  html:not(.dark) .label {
+    @apply text-slate-500;
+  }
+  .input-base {
+    @apply w-full rounded-lg border border-white/10 bg-night-900/80 px-3 py-2 text-sm text-slate-100 placeholder-slate-500 outline-none transition-colors focus:border-cyan-400/50 focus:ring-1 focus:ring-cyan-400/30;
+  }
+  html:not(.dark) .input-base {
+    @apply border-slate-300 bg-white text-slate-800 placeholder-slate-400 focus:border-cyan-600;
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-lg bg-cyan-500/90 px-4 py-2 text-sm font-semibold text-night-950 transition-all hover:bg-cyan-400 hover:shadow-glow disabled:opacity-40;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 rounded-lg border border-white/10 px-4 py-2 text-sm font-medium text-slate-300 transition-colors hover:border-cyan-400/40 hover:text-cyan-300;
+  }
+  html:not(.dark) .btn-ghost {
+    @apply border-slate-300 text-slate-600 hover:border-cyan-600 hover:text-cyan-700;
+  }
+  .prose-content h2 {
+    @apply mt-10 mb-4 text-2xl font-bold text-white;
+  }
+  html:not(.dark) .prose-content h2 {
+    @apply text-slate-900;
+  }
+  .prose-content h3 {
+    @apply mt-8 mb-3 text-lg font-semibold text-cyan-300;
+  }
+  html:not(.dark) .prose-content h3 {
+    @apply text-cyan-700;
+  }
+  .prose-content p {
+    @apply mb-4 leading-relaxed text-slate-300;
+  }
+  html:not(.dark) .prose-content p {
+    @apply text-slate-700;
+  }
+  .prose-content ul {
+    @apply mb-4 list-disc space-y-1 pl-6 text-slate-300;
+  }
+  html:not(.dark) .prose-content ul {
+    @apply text-slate-700;
+  }
+  .prose-content ol {
+    @apply mb-4 list-decimal space-y-1 pl-6 text-slate-300;
+  }
+  html:not(.dark) .prose-content ol {
+    @apply text-slate-700;
+  }
+  .prose-content blockquote {
+    @apply my-4 border-l-2 border-cyan-400/50 bg-cyan-400/5 px-4 py-2 italic text-slate-200;
+  }
+  html:not(.dark) .prose-content blockquote {
+    @apply border-cyan-600 bg-cyan-50 text-slate-800;
+  }
+  .prose-content table {
+    @apply my-4 w-full border-collapse text-sm;
+  }
+  .prose-content th {
+    @apply border border-white/10 bg-white/5 px-3 py-2 text-left font-semibold text-cyan-200;
+  }
+  html:not(.dark) .prose-content th {
+    @apply border-slate-300 bg-slate-200 text-slate-800;
+  }
+  .prose-content td {
+    @apply border border-white/10 px-3 py-2 text-slate-300;
+  }
+  html:not(.dark) .prose-content td {
+    @apply border-slate-300 text-slate-700;
+  }
+  .prose-content code {
+    @apply rounded bg-white/10 px-1.5 py-0.5 font-mono text-[13px] text-cyan-300;
+  }
+  .tag {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-[11px] font-medium;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-white/10;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-cyan-400/30;
+}
